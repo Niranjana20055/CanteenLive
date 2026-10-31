@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useAuth } from '../AuthContext.jsx';
 import { errMsg } from '../api.js';
@@ -31,6 +31,21 @@ export default function Login() {
     }
   };
 
+  const quickLogin = async (reg, pwd = 'canteen123') => {
+    setRegNo(reg);
+    setPassword(pwd);
+    setBusy(true);
+    setNote(null);
+    try {
+      await login(reg, pwd);
+      navigate('/');
+    } catch (err) {
+      setNote({ type: 'error', text: errMsg(err) });
+    } finally {
+      setBusy(false);
+    }
+  };
+
   return (
     <div className="login-wrap">
       <form className="card login" onSubmit={submit}>
@@ -55,9 +70,16 @@ export default function Login() {
           {mode === 'login' ? 'New student? Create an account' : 'Already registered? Log in'}
         </button>
 
-        <details className="demo-hint">
-          <summary>Demo accounts (development data)</summary>
-          <p>Student <b>23BCE0314</b> - Staff <b>STAFF001</b> to <b>STAFF005</b> - Admin <b>ADMIN001</b><br />Password for all: <b>canteen123</b></p>
+        <details className="demo-hint" open>
+          <summary style={{ cursor: 'pointer', fontWeight: 'bold' }}>⚡ 1-Click Demo Personas (Instant Login)</summary>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginTop: '8px' }}>
+            <button type="button" className="btn small" onClick={() => quickLogin('23BCE0314')}>Student: Kashish</button>
+            <button type="button" className="btn small" onClick={() => quickLogin('23BCE0780')}>Student: Niranjana</button>
+            <button type="button" className="btn small" onClick={() => quickLogin('STAFF001')}>Staff: Burger Point</button>
+            <button type="button" className="btn small" onClick={() => quickLogin('STAFF002')}>Staff: South Indian</button>
+            <button type="button" className="btn small" onClick={() => quickLogin('ADMIN001')}>Admin: All Stalls</button>
+          </div>
+          <p style={{ marginTop: '8px', fontSize: '0.8rem', color: '#64748b' }}>Default password for all accounts: <b>canteen123</b></p>
         </details>
       </form>
     </div>

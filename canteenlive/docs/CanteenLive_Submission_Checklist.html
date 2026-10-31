@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CanteenLive — Submission Checklist Form</title>
+<style>
+  @page {
+    size: A4;
+    margin: 25mm 20mm 25mm 20mm;
+  }
+  @media print {
+    .page-break { page-break-before: always; }
+    body { font-size: 11pt; }
+    .no-print { display: none; }
+  }
+  body {
+    font-family: 'Times New Roman', Times, serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
+    color: #16202A;
+    background: #ffffff;
+    line-height: 1.5;
+    margin: 0 auto;
+    padding: 40px;
+    max-width: 850px;
+  }
+  .print-bar {
+    position: sticky;
+    top: 0;
+    background: #16202A;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .btn-print {
+    background: #1F4FD8;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .btn-print:hover { background: #173FB3; }
+  h1, h2, h3, h4 { color: #16202A; font-family: Arial, sans-serif; }
+  .main-title { text-align: center; font-size: 20pt; margin-top: 20px; }
+  .chapter-title { page-break-before: always; font-size: 16pt; border-bottom: 2px solid #16202A; padding-bottom: 6px; margin-top: 30px; }
+  h2 { font-size: 14pt; margin-top: 20px; color: #1F4FD8; }
+  h3 { font-size: 12pt; margin-top: 15px; }
+  p { margin-bottom: 10px; text-align: justify; font-size: 11pt; }
+  li.bullet { margin-left: 24px; margin-bottom: 6px; font-size: 11pt; }
+  hr { border: none; border-top: 1px solid #E2E8F0; margin: 25px 0; }
+  .table-container { margin: 18px 0; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 10pt; font-family: Arial, sans-serif; }
+  th { background-color: #16202A; color: white; padding: 8px 10px; border: 1px solid #16202A; text-align: left; font-size: 9.5pt; }
+  td { padding: 7px 10px; border: 1px solid #CBD5E1; }
+  tr:nth-child(even) td { background-color: #F8FAFC; }
+  pre { background: #F1F5F9; border: 1px solid #E2E8F0; border-radius: 6px; padding: 12px; overflow-x: auto; font-family: Consolas, monospace; font-size: 9.5pt; }
+  code { font-family: Consolas, monospace; background: #F1F5F9; padding: 2px 5px; border-radius: 4px; font-size: 10pt; }
+  .page-break { page-break-before: always; height: 1px; margin: 20px 0; }
+  .math-block { background: #F8FAFC; border-left: 3px solid #1F4FD8; padding: 8px 14px; margin: 12px 0; font-family: 'Times New Roman', serif; font-size: 11.5pt; }
+</style>
+</head>
+<body>
+<div class="print-bar no-print">
+  <div><strong>CanteenLive — Submission Checklist Form</strong> — Official Format</div>
+  <button class="btn-print" onclick="window.print()">🖨️ Save as PDF / Print (Ctrl+P)</button>
+</div>
+<h1 class="main-title">BCSE406L – NoSQL Database Project Documentation Templates</h1>
+<h2>Submission Checklist</h2>
+<h3>Fall Semester 2026–2027</h3>
+<hr/>
+<p><strong>Instructions:</strong> Each team must complete the relevant sections, use consistent project details across all documents, attach genuine implementation evidence, and provide a working GitHub repository link. Replace the blank fields with your team’s details.</p>
+<hr/>
+<h3><strong>Project Metadata</strong></h3>
+<li class="bullet"><strong>Project Title:</strong> CanteenLive — Real-Time Food Stall Queue Length & Wait Time Estimator</li>
+<li class="bullet"><strong>Batch ID / Team ID:</strong> NS26</li>
+<li class="bullet"><strong>Main NoSQL Database:</strong> MongoDB (Document Store) & Redis (In-Memory Key-Value & Pub/Sub Store)</li>
+<li class="bullet"><strong>Faculty Guide:</strong> Dr. D. Vivek (SCOPE, VIT Vellore)</li>
+<hr/>
+<h3><strong>Team Members</strong></h3>
+<div class="table-container"><table><thead><tr>
+<th>S. No.</th>
+<th>Register Number</th>
+<th>Student Name</th>
+<th>Marks (20) – Project Marks</th>
+<th>Remarks</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>23BCE0314</td>
+<td><strong>Kashish</strong></td>
+<td></td>
+<td>Literature survey, MongoDB schema, Aggregation pipelines</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>23BCE0780</td>
+<td><strong>Niranjana Vijayaraghavan</strong></td>
+<td></td>
+<td>Full-stack prototype, UI/UX, Sync engine, Documentation</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>23BCE2100</td>
+<td><strong>Priyal Chamaria</strong></td>
+<td></td>
+<td>Staff counter module, Menu CRUD, Testing & Presentation</td>
+</tr>
+</tbody></table></div>
+<hr/>
+<h3><strong>Submission Checklist</strong></h3>
+<li class="bullet">[x] <strong>Project Information Sheet – hardcopy</strong>  </li>
+<p>  <em>(Already submitted during Review 1)</em></p>
+<li class="bullet">[x] <strong>Review 1 document – Softcopy</strong>  </li>
+<p>  <em>(Included in project document under Annexure A – Refer to Index)</em></p>
+<li class="bullet">[x] <strong>Review 2 document – Softcopy</strong>  </li>
+<p>  <em>(Included in project document under Annexure B – Refer to Index)</em></p>
+<li class="bullet">[x] <strong>Review 3 document – Softcopy</strong>  </li>
+<p>  <em>(Included in project document under Annexure C – Refer to Index)</em></p>
+<li class="bullet">[x] <strong>Project report / final report – Softcopy</strong>  </li>
+<p>  <em>(Uploaded in VTOP under Project as <code>CanteenLive_Project_Report_NS26.pdf</code>)</em></p>
+<li class="bullet">[x] <strong>Implementation proof (screenshots, test results, database evidence, and demo evidence) – Softcopy</strong>  </li>
+<p>  <em>(Included in project document under Annexure D – Refer to Index)</em></p>
+<li class="bullet">[x] <strong>GitHub repository link with source code and README – Softcopy</strong>  </li>
+<p>  <em>(Included in project document under Annexure E – Refer to Index)</em>  </p>
+<p>  <strong>Repo Link:</strong> <code>https://github.com/niranjana-v/canteenlive-nosql</code></p>
+<li class="bullet">[x] <strong>Research paper draft or patent disclosure draft – Softcopy</strong>  </li>
+<p>  <em>(Included in project document under Annexure F – Refer to Index)</em>  </p>
+<p>  <em>Title: CanteenLive: A Zero-Hardware, Dual-Layer NoSQL Architecture for Real-Time Campus Queue Estimation and Asymmetric Crowd Balancing</em></p>
+<hr/>
+<p>\vspace{3cm}</p>
+<p><strong>Student Signatures:</strong>  </p>
+<p>1. ___________________________ (Kashish - 23BCE0314)  </p>
+<p>2. ___________________________ (Niranjana Vijayaraghavan - 23BCE0780)  </p>
+<p>3. ___________________________ (Priyal Chamaria - 23BCE2100)  </p>
+<p>\vspace{1.5cm}</p>
+<p><strong>Faculty Signature:</strong>  </p>
+<p>___________________________  </p>
+<p><strong>Dr. D. Vivek</strong>  </p>
+<p>Assistant Professor / Associate Professor  </p>
+<p>School of Computer Science and Engineering (SCOPE)  </p>
+<p>Vellore Institute of Technology (VIT), Vellore  </p>
+</body>
+</html>

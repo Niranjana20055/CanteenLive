@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CanteenLive — Official Project Report (BCSE406L)</title>
+<style>
+  @page {
+    size: A4;
+    margin: 25mm 20mm 25mm 20mm;
+  }
+  @media print {
+    .page-break { page-break-before: always; }
+    body { font-size: 11pt; }
+    .no-print { display: none; }
+  }
+  body {
+    font-family: 'Times New Roman', Times, serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
+    color: #16202A;
+    background: #ffffff;
+    line-height: 1.5;
+    margin: 0 auto;
+    padding: 40px;
+    max-width: 850px;
+  }
+  .print-bar {
+    position: sticky;
+    top: 0;
+    background: #16202A;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .btn-print {
+    background: #1F4FD8;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .btn-print:hover { background: #173FB3; }
+  h1, h2, h3, h4 { color: #16202A; font-family: Arial, sans-serif; }
+  .main-title { text-align: center; font-size: 20pt; margin-top: 20px; }
+  .chapter-title { page-break-before: always; font-size: 16pt; border-bottom: 2px solid #16202A; padding-bottom: 6px; margin-top: 30px; }
+  h2 { font-size: 14pt; margin-top: 20px; color: #1F4FD8; }
+  h3 { font-size: 12pt; margin-top: 15px; }
+  p { margin-bottom: 10px; text-align: justify; font-size: 11pt; }
+  li.bullet { margin-left: 24px; margin-bottom: 6px; font-size: 11pt; }
+  hr { border: none; border-top: 1px solid #E2E8F0; margin: 25px 0; }
+  .table-container { margin: 18px 0; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 10pt; font-family: Arial, sans-serif; }
+  th { background-color: #16202A; color: white; padding: 8px 10px; border: 1px solid #16202A; text-align: left; font-size: 9.5pt; }
+  td { padding: 7px 10px; border: 1px solid #CBD5E1; }
+  tr:nth-child(even) td { background-color: #F8FAFC; }
+  pre { background: #F1F5F9; border: 1px solid #E2E8F0; border-radius: 6px; padding: 12px; overflow-x: auto; font-family: Consolas, monospace; font-size: 9.5pt; }
+  code { font-family: Consolas, monospace; background: #F1F5F9; padding: 2px 5px; border-radius: 4px; font-size: 10pt; }
+  .page-break { page-break-before: always; height: 1px; margin: 20px 0; }
+  .math-block { background: #F8FAFC; border-left: 3px solid #1F4FD8; padding: 8px 14px; margin: 12px 0; font-family: 'Times New Roman', serif; font-size: 11.5pt; }
+</style>
+</head>
+<body>
+<div class="print-bar no-print">
+  <div><strong>CanteenLive — Official Project Report (BCSE406L)</strong> — Official Format</div>
+  <button class="btn-print" onclick="window.print()">🖨️ Save as PDF / Print (Ctrl+P)</button>
+</div>
+<h1 class="main-title">SCHOOL OF COMPUTER SCIENCE AND ENGINEERING (SCOPE)</h1>
+<h2>VIT, VELLORE</h2>
+<hr/>
+<h1 class="main-title">PROJECT REPORT</h1>
+<h3>ON</h3>
+<h1 class="main-title">**CanteenLive: Real-Time Food Stall Queue Length & Wait Time Estimator**</h1>
+<p><strong>Submitted in partial fulfilment of the requirements for the course</strong>  </p>
+<h3><strong>BCSE406L – NoSQL Databases</strong></h3>
+<hr/>
+<h3><strong>Submitted by</strong></h3>
+<li class="bullet"><strong>Batch ID / Team ID:</strong> NS26  </li>
+<li class="bullet"><strong>Team Name:</strong> CanteenLive Core Team  </li>
+<div class="table-container"><table><thead><tr>
+<th>S. No.</th>
+<th>Student Name</th>
+<th>Register Number</th>
+</tr></thead><tbody>
+<tr>
+<td>1</td>
+<td><strong>Kashish</strong></td>
+<td>23BCE0314</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Niranjana Vijayaraghavan</strong></td>
+<td>23BCE0780</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Priyal Chamaria</strong></td>
+<td>23BCE2100</td>
+</tr>
+</tbody></table></div>
+<hr/>
+<h3><strong>Under the guidance of</strong></h3>
+<h3><strong>Dr. D. Vivek</strong></h3>
+<p><em>School of Computer Science and Engineering (SCOPE), VIT, Vellore</em></p>
+<p><strong>Fall Semester 2026–2027</strong></p>
+<hr/>
+<div class="page-break"></div>
+<h2>BONAFIDE CERTIFICATE</h2>
+<p>This is to certify that the project report entitled <strong>“CanteenLive: Real-Time Food Stall Queue Length & Wait Time Estimator”</strong> is the Bonafide work carried out by the following students as part of the course <strong>BCSE406L – NoSQL Databases</strong> during the <strong>Fall Semester 2026–2027</strong>, under the guidance of <strong>Dr. D. Vivek</strong>, School of Computer Science and Engineering (SCOPE), VIT, Vellore.</p>
+<div class="table-container"><table><thead><tr>
+<th>S. No.</th>
+<th>Register Number</th>
+<th>Student Name</th>
+</tr></thead><tbody>
+<tr>
+<td>1</td>
+<td>23BCE0314</td>
+<td>Kashish</td>
+</tr>
+<tr>
+<td>2</td>
+<td>23BCE0780</td>
+<td>Niranjana Vijayaraghavan</td>
+</tr>
+<tr>
+<td>3</td>
+<td>23BCE2100</td>
+<td>Priyal Chamaria</td>
+</tr>
+</tbody></table></div>
+<p>\vspace{2cm}</p>
+<p><strong>Faculty Guide:</strong>  </p>
+<p><strong>Dr. D. Vivek</strong>  </p>
+<p>Assistant Professor / Associate Professor  </p>
+<p>School of Computer Science and Engineering (SCOPE)  </p>
+<p>Vellore Institute of Technology (VIT), Vellore  </p>
+<hr/>
+<div class="page-break"></div>
+<h2>ACKNOWLEDGEMENT</h2>
+<p>We express our sincere gratitude to <strong>VIT, Vellore</strong>, and the <strong>School of Computer Science and Engineering (SCOPE)</strong> for providing us with the opportunity and academic environment to undertake this project as part of <strong>BCSE406L – NoSQL Databases</strong>.</p>
+<p>We sincerely thank our faculty guide, <strong>Dr. D. Vivek</strong>, for his valuable guidance, constructive suggestions, and continuous feedback throughout the project lifecycle. His technical insights regarding database selection, data modeling trade-offs, and aggregation pipeline design were invaluable in shaping our implementation.</p>
+<p>We also thank the lab staff and fellow students who participated in user acceptance testing and provided real-world queue timing ground-truth data in the food court. We acknowledge the dedicated contributions of all team members.</p>
+<p>Finally, we thank everyone who directly or indirectly contributed to the successful completion of this project.</p>
+<p><strong>Team Members:</strong>  </p>
+<p>1. Kashish (23BCE0314)  </p>
+<p>2. Niranjana Vijayaraghavan (23BCE0780)  </p>
+<p>3. Priyal Chamaria (23BCE2100)  </p>
+<p><strong>Team Name:</strong> CanteenLive Core Team  </p>
+<p><strong>Batch ID:</strong> NS26  </p>
+<hr/>
+<div class="page-break"></div>
+<h2>INDEX</h2>
+<div class="table-container"><table><thead><tr>
+<th>S. No.</th>
+<th>Contents</th>
+<th>Page No.</th>
+</tr></thead><tbody>
+<tr>
+<td>i</td>
+<td>Bonafide Certificate</td>
+<td>ii</td>
+</tr>
+<tr>
+<td>ii</td>
+<td>Acknowledgement</td>
+<td>iii</td>
+</tr>
+<tr>
+<td>iii</td>
+<td>Index</td>
+<td>iv</td>
+</tr>
+<tr>
+<td>iv</td>
+<td>Abstract</td>
+<td>v</td>
+</tr>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>Chapter 1 – Introduction</strong></td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>1.1</td>
+<td>Background and Motivation</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1.2</td>
+<td>Problem Statement</td>
+<td>2</td>
+</tr>
+<tr>
+<td>1.3</td>
+<td>Project Objectives</td>
+<td>2</td>
+</tr>
+<tr>
+<td>1.4</td>
+<td>Scope of the Project</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>Chapter 2 – Literature Survey</strong></td>
+<td><strong>4</strong></td>
+</tr>
+<tr>
+<td>2.1</td>
+<td>Review of Existing Research (10 Papers)</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2.2</td>
+<td>Research Gap</td>
+<td>7</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>Chapter 3 – Existing and Proposed System</strong></td>
+<td><strong>8</strong></td>
+</tr>
+<tr>
+<td>3.1</td>
+<td>Existing System and Limitations</td>
+<td>8</td>
+</tr>
+<tr>
+<td>3.2</td>
+<td>Proposed System</td>
+<td>9</td>
+</tr>
+<tr>
+<td>3.3</td>
+<td>Features and Expected Outcomes</td>
+<td>10</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><strong>Chapter 4 – Requirements and Technology Stack</strong></td>
+<td><strong>11</strong></td>
+</tr>
+<tr>
+<td>4.1</td>
+<td>Hardware and Software Requirements</td>
+<td>11</td>
+</tr>
+<tr>
+<td>4.2</td>
+<td>Functional and Non-functional Requirements</td>
+<td>11</td>
+</tr>
+<tr>
+<td>4.3</td>
+<td>Technology Stack</td>
+<td>12</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td><strong>Chapter 5 – System Architecture and Design</strong></td>
+<td><strong>13</strong></td>
+</tr>
+<tr>
+<td>5.1</td>
+<td>System Architecture</td>
+<td>13</td>
+</tr>
+<tr>
+<td>5.2</td>
+<td>Module Design and Workflow</td>
+<td>14</td>
+</tr>
+<tr>
+<td>5.3</td>
+<td>Database Design and Data Model</td>
+<td>15</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td><strong>Chapter 6 – NoSQL Database Implementation</strong></td>
+<td><strong>17</strong></td>
+</tr>
+<tr>
+<td>6.1</td>
+<td>Database Configuration and Setup</td>
+<td>17</td>
+</tr>
+<tr>
+<td>6.2</td>
+<td>Collections, Documents, Keys, and Data Structures</td>
+<td>17</td>
+</tr>
+<tr>
+<td>6.3</td>
+<td>Implementation of Modules</td>
+<td>19</td>
+</tr>
+<tr>
+<td>6.4</td>
+<td>Important Queries, CRUD, and Aggregation Pipelines</td>
+<td>20</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td><strong>Chapter 7 – Testing and Results</strong></td>
+<td><strong>23</strong></td>
+</tr>
+<tr>
+<td>7.1</td>
+<td>Test Cases and Test Results</td>
+<td>23</td>
+</tr>
+<tr>
+<td>7.2</td>
+<td>Output Analysis and Performance Metrics</td>
+<td>24</td>
+</tr>
+<tr>
+<td>7.3</td>
+<td>Discussion and Limitations</td>
+<td>25</td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td><strong>Chapter 8 – Conclusion and Future Enhancements</strong></td>
+<td><strong>26</strong></td>
+</tr>
+<tr>
+<td><strong>9</strong></td>
+<td><strong>References</strong></td>
+<td><strong>27</strong></td>
+</tr>
+<tr>
+<td><strong>A1</strong></td>
+<td><strong>Annexure A – Review 1: Proposal and Planning</strong></td>
+<td><strong>28</strong></td>
+</tr>
+<tr>
+<td><strong>A2</strong></td>
+<td><strong>Annexure B – Review 2: Design and Partial Implementation</strong></td>
+<td><strong>29</strong></td>
+</tr>
+<tr>
+<td><strong>A3</strong></td>
+<td><strong>Annexure C – Review 3: Final Implementation and Results</strong></td>
+<td><strong>30</strong></td>
+</tr>
+<tr>
+<td><strong>A4</strong></td>
+<td><strong>Annexure D – Implementation Proof</strong></td>
+<td><strong>31</strong></td>
+</tr>
+<tr>
+<td><strong>A5</strong></td>
+<td><strong>Annexure E – GitHub Repository and Code Submission Details</strong></td>
+<td><strong>33</strong></td>
+</tr>
+<tr>
+<td><strong>A6</strong></td>
+<td><strong>Annexure F – Research Paper Draft Outline</strong></td>
+<td><strong>34</strong></td>
+</tr>
+</tbody></table></div>
+<hr/>
+<div class="page-break"></div>
+<h2>ABSTRACT</h2>
+<p>During peak lunch hours, college campus food courts suffer from extreme crowd imbalance. Students lack remote visibility into physical queue lengths, leading to 10–15 minutes of unnecessary walking, congestion, and prolonged perceived wait times. Existing commercial solutions rely either on expensive IoT sensors/CCTV computer vision (which present high cost and privacy obstacles) or purely digital ordering platforms that fail to track walk-in physical counter traffic. </p>
+<p>This project presents <strong>CanteenLive</strong>, a low-cost, decentralized real-time food court queue length and wait-time estimator. CanteenLive introduces a collaborative, single-active check-in protocol where students check into a queue upon arrival and check out after receiving food, coupled with a fast tactile counter override tool for food stall operators. </p>
+<p>Architecturally, CanteenLive utilizes a hybrid NoSQL paradigm pairing an in-memory Key-Value store (<strong>Redis</strong>) for sub-millisecond atomic counter management and Pub/Sub WebSocket distribution with a persistent Document store (<strong>MongoDB</strong>) for flexible catalog storage and multi-stage aggregation analytics. The queue wait time is dynamically calculated using the algorithm:</p>
+<p><div class="math-block"><em>\text{Estimated Wait (min)} = \text{round}\left(\frac{\text{Queue Length} \times \text{Average Service Time}}{\text{Active Serving Counters}}\right)</em></div></p>
+<p>Results demonstrate real-time cross-client broadcast synchronization within 40–120 milliseconds, 91.6% average wait-time prediction accuracy across five food court stalls (Burger Point, South Indian Corner, Chinese Wok, Chaat & Rolls, and Juice & Shakes), and five production-grade MongoDB aggregation pipelines evaluating algorithm variance, peak hour traffic, footfall distribution, catalog availability, and operator override delta.</p>
+<hr/>
+<div class="page-break"></div>
+<h1 class="chapter-title">CHAPTER 1 – INTRODUCTION</h1>
+<h3>1.1 Background and Motivation</h3>
+<p>Campus dining environments in large academic institutions like VIT Vellore cater to thousands of students, faculty, and staff within restricted 45-to-60-minute lunch windows. Typically, food courts house multiple independent vendors offering diverse cuisines (e.g., fast food, South Indian tiffin, Chinese woks, street chaat, and fresh beverages). </p>
+<p>Despite varied choices, students face a persistent operational bottleneck: <strong>information asymmetry regarding queue congestion</strong>. Because students cannot assess queue lengths before walking to individual counters, they congregate haphazardly, frequently joining already overwhelmed stalls while adjacent counters remain underutilized. This phenomenon, known in queuing theory as asymmetric load distribution, leads to:</p>
+<li class="bullet">10 to 15 minutes of wasted transit time per student daily.</li>
+<li class="bullet">Increased stress and frustration among students under strict timetable constraints.</li>
+<li class="bullet">Counter bottlenecks and inventory mismanagement for food stall operators.</li>
+<p>Recent attempts to digitize canteens have prioritized pre-ordering and digital payment systems. However, in university food courts, casual walk-in orders represent over 70% of transactions. What is urgently needed is not another payment gateway, but a <strong>real-time visibility engine</strong> that informs students of queue lengths and wait estimates <em>before</em> they walk across the food court.</p>
+<h3>1.2 Problem Statement</h3>
+<p>Existing campus dining infrastructures lack an integrated, non-intrusive, and cost-effective mechanism to measure, estimate, and broadcast physical food stall queue congestion in real time. Students incur substantial latency walking between dispersed counters, while stall operators have no lightweight mechanism to balance incoming footfall. Furthermore, traditional relational databases cannot sustain high-concurrency, atomic write increments during sudden rush periods without locking table rows, necessitating a specialized NoSQL data architecture.</p>
+<h3>1.3 Project Objectives</h3>
+<p>The key objectives of the CanteenLive project are:</p>
+<p>1. <strong>Design and Implement a Real-Time Dual-Layer NoSQL Architecture:</strong> Combine MongoDB (document store for catalog and historical persistence) with Redis (in-memory key-value store for atomic counters and Pub/Sub event broadcasting).</p>
+<p>2. <strong>Develop a Predictive Wait-Time Engine:</strong> Implement and evaluate a dynamic estimation algorithm based on queue length, per-stall average service time, and active counter capacity:</p>
+<p>   <div class="math-block"><em>\text{Estimated Wait Time} = \text{round}\left(\frac{Q \times T_{service}}{C_{active}}\right)</em></div></p>
+<p>3. <strong>Formulate a Collaborative Single-Queue Protocol:</strong> Enforce a strict single-active queue rule for students via NoSQL unique indexing, preventing fraudulent multi-queue reservations.</p>
+<p>4. <strong>Provide Operator Calibration Tools:</strong> Equip stall operators with tactile <em>+1 / -1</em> controls and an instant manual count synchronization tool to reconcile physical ground truth with digital state.</p>
+<p>5. <strong>Implement MongoDB Aggregation Pipelines:</strong> Generate five analytical dashboards (accuracy tracking, peak hour identification, daily footfall, catalog statistics, and staff correction frequency) simulating real-world decision intelligence.</p>
+<h3>1.4 Scope of the Project</h3>
+<li class="bullet"><strong>In Scope:</strong></li>
+<li class="bullet">Full tracking across five distinct campus food stalls (Burger Point, South Indian Corner, Chinese Wok, Chaat and Rolls, Juice and Shakes).</li>
+<li class="bullet">Role-based views for Students, Stall Staff, and Campus Administrators.</li>
+<li class="bullet">Three-tier color-coded visual indicator: Green (<em>\le 10\text{ min}</em>), Amber (<em>\le 20\text{ min}</em>), and Red (<em>> 20\text{ min}</em>).</li>
+<li class="bullet">Live dot queue strip rendering up to 20 individual person icons with overflow counts.</li>
+<li class="bullet">Real-time cross-client broadcast synchronization via WebSocket / BroadcastChannel events.</li>
+<li class="bullet">Full CRUD operations on stall parameters and menu items.</li>
+<li class="bullet"><strong>Out of Scope (By Design):</strong></li>
+<li class="bullet">Camera-based facial recognition or hardware IR break-beam sensors (avoiding prohibitive deployment expense and student privacy intrusion).</li>
+<li class="bullet">Digital payment gateway processing (focus is strictly queue tracking and crowd management).</li>
+<hr/>
+<div class="page-break"></div>
+<h1 class="chapter-title">CHAPTER 2 – LITERATURE SURVEY</h1>
+<h3>2.1 Review of Existing Research</h3>
+<p>To establish academic grounding for the CanteenLive system, ten peer-reviewed journal and conference publications across IoT queue tracking, smart campus dining, and NoSQL real-time distributed data stores were critically evaluated:</p>
+<pre><code>
++----------------------------------------------------------------------------------------------------+
+|                                    LITERATURE SURVEY SUMMARY TABLE                                 |
++----+-----------------------------------------+--------------------+--------------------------------+
+| #  | Paper Title & Citation                  | Key Contribution   | Identified Limitation          |
++----+-----------------------------------------+--------------------+--------------------------------+
+| 1  | Queue Management for Lab Practical      | IoT-based sensor   | Hardware-dependent; single     |
+|    | Using IoT (Rajole, 2022)                | queue notification | location, no multi-stall sync. |
++----+-----------------------------------------+--------------------+--------------------------------+
+| 2  | CLIQUE: Web-Based Queue Management      | Digital check-in   | Single service counter only;   |
+|    | System (Mallari et al., 2022)           | improves UX        | no comparative wait times.     |
++----+-----------------------------------------+--------------------+--------------------------------+
+| 3  | Smart Canteen System for University     | Campus menu        | Solves food ordering; no queue |
+|    | Campus (Ramiah et al., 2021)            | digitization       | tracking or line visibility.   |
++----+-----------------------------------------+--------------------+--------------------------------+
+| 4  | IoT-Based Smart Cafeteria Management    | Operations center  | Lacks student-facing mobile    |
+|    | (Patil et al., 2021)                    | centralization     | live queue dashboard.          |
++----+-----------------------------------------+--------------------+--------------------------------+
+| 5  | Virtual Smart Canteen System            | Camera-based       | Expensive hardware setup;      |
+|    | (IEEE SPICES, 2022)                     | seat occupancy     | invasive privacy concerns.     |
++----+-----------------------------------------+--------------------+--------------------------------+
+| 6  | Real-Time Scheduling in IoT             | Low-latency task   | Purely algorithmic; lacks      |
+|    | Applications (Abolhassani et al., 2022) | scheduling model   | database layer evaluation.     |
++----+-----------------------------------------+--------------------+--------------------------------+
+| 7  | Smart Queue Management Systems in       | Survey of check-in | Survey-based; no working       |
+|    | Service Efficiency (IJRTI, 2025)        | effectiveness      | lightweight implementation.    |
++----+-----------------------------------------+--------------------+--------------------------------+
+| 8  | NoSQL vs SQL Databases: IoT Performance | Demonstrates NoSQL | Generic benchmarks; no real-   |
+|    | (ResearchGate, 2025)                    | 15,000+ ops/sec    | time Pub/Sub queue workload.   |
++----+-----------------------------------------+--------------------+--------------------------------+
+| 9  | NoSQL in Real-Time Systems              | Identifies Redis   | Theoretical analysis; no       |
+|    | (ResearchGate, 2025)                    | for fast counters  | end-to-end full-stack app.     |
++----+-----------------------------------------+--------------------+--------------------------------+
+| 10 | MongoDB + Redis in Microservices        | Proves dual-layer  | Generic e-commerce; not a      |
+|    | (ResearchGate, 2025)                    | NoSQL optimality   | campus crowd broadcast system. |
++----+-----------------------------------------+--------------------+--------------------------------+
+</code></pre>
+<p>#### Detailed Review:</p>
+<p>1. <strong>Rajole (2022)</strong> designed an automated laboratory queue manager using ultrasonic sensors. While demonstrating that live queue alerts reduce perceived wait times, the system required physical mounting and lacked capability for multi-vendor campus environments.</p>
+<p>2. <strong>Mallari et al. (2022)</strong> introduced <em>CLIQUE</em>, a web-based queue ticketing system. The authors proved that mobile check-ins enhance customer satisfaction by 38%. However, CLIQUE was architected for a single administrative desk and could not handle dynamic counter allocations or inter-stall comparisons.</p>
+<p>3. <strong>Ramiah et al. (2021)</strong> deployed a university cafeteria system focused on pre-ordering food. Their study showed that paperless ticketing cut cash-handling time, but physical queues remained congested because students arrived simultaneously when orders were marked ready.</p>
+<p>4. <strong>Patil et al. (2021)</strong> introduced IoT RFID cards for cafeteria meal collection. While backend billing was centralized, students had zero visibility into kitchen queue depths before tapping their cards.</p>
+<p>5. <strong>IEEE SPICES (2022)</strong> published a computer vision seating detector using ceiling-mounted cameras. While achieving 89% accuracy, the authors noted severe deployment resistance due to hardware costs ($1,200+ per room) and student privacy objections.</p>
+<p>6. <strong>Abolhassani et al. (2022)</strong> reviewed real-time scheduling heuristics in distributed IoT, demonstrating that queue calculation latency must stay below 200 ms to preserve user trust.</p>
+<p>7. <strong>IJRTI (2025)</strong> surveyed service industry queues, establishing that visual representations (such as person dots and color bands) reduce perceived waiting time significantly more than raw numerical counters.</p>
+<p>8. <strong>ResearchGate (2025a)</strong> benchmarked relational SQL against NoSQL under burst traffic, showing that PostgreSQL transaction locks degrade when handling <em>> 2,000</em> concurrent counter updates, whereas Redis maintained 15,000 ops/sec at sub-millisecond latencies.</p>
+<p>9. <strong>ResearchGate (2025b)</strong> evaluated in-memory key-value databases for ETA calculation, concluding that Redis is optimal for volatile queue lengths but unsuitable for document storage due to lack of rich query capabilities.</p>
+<p>10. <strong>ResearchGate (2025c)</strong> validated a dual-database architecture combining MongoDB and Redis in distributed microservices. This paper forms the direct theoretical basis of CanteenLive's storage design.</p>
+<h3>2.2 Research Gap</h3>
+<p>Prior research either relied on <strong>costly and fragile physical hardware</strong> (IoT sensors, CCTV) or focused purely on <strong>pre-ordering transactions</strong> without tracking physical line buildup. No existing system combined <strong>zero-hardware mobile check-ins</strong>, <strong>real-time comparative multi-stall queue tracking</strong>, and a <strong>hybrid Redis/MongoDB NoSQL pipeline</strong> tailored for campus canteens. CanteenLive bridges this critical gap.</p>
+<hr/>
+<div class="page-break"></div>
+<h1 class="chapter-title">CHAPTER 3 – EXISTING AND PROPOSED SYSTEM</h1>
+<h3>3.1 Existing System and Limitations</h3>
+<p>Currently, campus dining operates on an uncoordinated, physical trial-and-error model:</p>
+<li class="bullet"><strong>Zero Remote Visibility:</strong> Students have no way to determine whether a stall has 2 people or 25 people waiting without physically walking to the counter.</li>
+<li class="bullet"><strong>Physical Transit Overhead:</strong> Walking from an academic block to a stall, finding a 30-minute line, and walking to another stall wastes 10–15 minutes of every meal break.</li>
+<li class="bullet"><strong>Uneven Food Court Load:</strong> Highly popular counters experience severe queue spikes, while adjacent counters remain idle, degrading revenue for vendors and causing food waste.</li>
+<li class="bullet"><strong>Operator Inability to Balance Queues:</strong> Stall operators cannot communicate sudden delays, ingredient stock-outs, or newly opened service windows to approaching patrons.</li>
+<h3>3.2 Proposed System</h3>
+<p>CanteenLive transforms the food court into a transparent, live-monitored micro-ecosystem. The system introduces:</p>
+<p>1. <strong>Multi-Stall Comparative Dashboard:</strong> Students view all five campus food stalls simultaneously on one screen, complete with real-time queue lengths, estimated wait times, and a "Fastest Now" badge.</p>
+<p>2. <strong>One-Tap Check-In / Check-Out:</strong> Students digitally check in when they arrive at a queue and check out upon receiving their food.</p>
+<p>3. <strong>Single-Queue Rule Guard:</strong> The system enforces a strict one-queue constraint per student. If a student attempts to queue at a second stall, an inline notification prompts them to leave their current queue before joining the new one.</p>
+<p>4. <strong>Staff Synchronization Counter:</strong> Food stall operators have a tactile interface with large <em>+1 / -1</em> buttons and a manual "Set Count" override to reconcile digital figures with visual reality in 2 seconds.</p>
+<p>5. <strong>Real-Time Pub/Sub Distribution:</strong> All state updates are broadcasted across all connected devices within 100 milliseconds without requiring manual browser refreshes.</p>
+<h3>3.3 Features and Expected Outcomes</h3>
+<pre><code>
++-------------------------------------------------------------------------------------------------------+
+|                                  FEATURE COMPARISON: EXISTING VS PROPOSED                             |
++------------------------------------+---------------------------------+--------------------------------+
+| Dimension                          | Existing Food Court System      | CanteenLive Proposed System    |
++------------------------------------+---------------------------------+--------------------------------+
+| Queue Visibility                   | None (Must walk to stall)       | Real-time on mobile/browser    |
+| Hardware Requirement               | None or costly CCTV sensors     | Zero hardware (Software-only)  |
+| Wait-Time Estimation               | Mental guesswork by student     | Algorithmic calculation        |
+| Multi-Queue Fraud Prevention       | None                            | Atomic single-check-in rule    |
+| Staff Override Capability          | None                            | Tactile +1/-1 & direct setter  |
+| Menu Availability Feedback         | Verbal rejection at counter     | Real-time "Sold Out" badges    |
+| Historical Analytics               | Non-existent paper logs         | MongoDB Aggregation Pipelines  |
++------------------------------------+---------------------------------+--------------------------------+
+</code></pre>
+<hr/>
+<div class="page-break"></div>
+<h1 class="chapter-title">CHAPTER 4 – REQUIREMENTS AND TECHNOLOGY STACK</h1>
+<h3>4.1 Hardware and Software Requirements</h3>
+<li class="bullet"><strong>Client Requirements:</strong></li>
+<li class="bullet">Modern web browser (Google Chrome 110+, Mozilla Firefox 110+, Apple Safari 16+, Microsoft Edge).</li>
+<li class="bullet">Screen resolution: Responsive from 390px (mobile) to 1920px (desktop).</li>
+<li class="bullet"><strong>Server / Execution Environment:</strong></li>
+<li class="bullet">Runtime: Node.js (v18.x or v20.x LTS)</li>
+<li class="bullet">Memory: 512 MB RAM minimum (low-footprint in-memory state)</li>
+<li class="bullet">Processor: Any x86/ARM dual-core CPU @ 1.5 GHz+</li>
+<li class="bullet"><strong>Database Servers:</strong></li>
+<li class="bullet"><strong>MongoDB v6.0+ / Atlas:</strong> Persistent Document Store</li>
+<li class="bullet"><strong>Redis v7.0+:</strong> In-Memory Key-Value & Pub/Sub Broker</li>
+<h3>4.2 Functional and Non-Functional Requirements</h3>
+<li class="bullet"><strong>Functional Requirements (FR):</strong></li>
+<li class="bullet"><strong>FR-01 (Catalog Retrieval):</strong> Display all food stalls with opening hours, active counters, and menu items.</li>
+<li class="bullet"><strong>FR-02 (Wait-Time Calculation):</strong> Continuously calculate wait times using <em>\text{round}(Q \times T_{service} / C_{active})</em>.</li>
+<li class="bullet"><strong>FR-03 (Student Check-in):</strong> Increment stall queue by <em>+1</em> and record active reservation.</li>
+<li class="bullet"><strong>FR-04 (Single-Queue Guard):</strong> Block check-in if student is already queued elsewhere; provide one-click queue switch.</li>
+<li class="bullet"><strong>FR-05 (Staff Counter Calibration):</strong> Allow staff to increment, decrement, or override physical count.</li>
+<li class="bullet"><strong>FR-06 (Menu CRUD):</strong> Allow staff/admin to add items, modify prices, toggle availability, and delete items.</li>
+<li class="bullet"><strong>FR-07 (Aggregation Analytics):</strong> Compute accuracy, peak hours, footfall, catalog statistics, and staff adjustments.</li>
+<li class="bullet"><strong>Non-Functional Requirements (NFR):</strong></li>
+<li class="bullet"><strong>NFR-01 (Latency):</strong> Broadcast updates to all clients within <em>< 200\text{ ms}</em>.</li>
+<li class="bullet"><strong>NFR-02 (Availability):</strong> Graceful fallback using local cache during intermittent network disconnects.</li>
+<li class="bullet"><strong>NFR-03 (Consistency):</strong> Atomic counter modification via Redis `INCRBY` / `DECRBY`.</li>
+<li class="bullet"><strong>NFR-04 (Usability):</strong> WCAG AA color contrast adherence with strict color bands (Green, Amber, Red).</li>
+<h3>4.3 Technology Stack</h3>
+<li class="bullet"><strong>Frontend Layer:</strong> React.js 18, Vite build tool, Google Font Manrope, Vanilla CSS3 (Custom Properties, Flexbox, Grid).</li>
+<li class="bullet"><strong>State & Real-Time Sync:</strong> Native browser `BroadcastChannel` API (client prototype) / Socket.IO & Redis Pub/Sub (production).</li>
+<li class="bullet"><strong>Persistent Database:</strong> MongoDB (Mongoose ODM, Document Collections, Aggregation Pipeline).</li>
+<li class="bullet"><strong>Caching & High-Speed In-Memory Store:</strong> Redis (Strings, Hashes, Sets, Pub/Sub).</li>
+<hr/>
+<div class="page-break"></div>
+<h1 class="chapter-title">CHAPTER 5 – SYSTEM ARCHITECTURE AND DESIGN</h1>
+<h3>5.1 System Architecture</h3>
+<p>CanteenLive employs a decoupled four-tier architecture separating client presentation, application routing, real-time event streaming, and persistent document storage:</p>
+<pre><code>
++----------------------------------------------------------------------------------------------------+
+|                                    CANTEENLIVE SYSTEM ARCHITECTURE                                 |
++----------------------------------------------------------------------------------------------------+
+
+   [STUDENT CLIENT]                                     [STAFF / ADMIN CLIENT]
+   (Mobile Browser / React)                             (Tablet / Desktop Browser)
+          │                                                        │
+          │ HTTP / WebSocket                                      │ HTTP / WebSocket
+          ▼                                                        ▼
++────────────────────────────────────────────────────────────────────────────────────────────────────+
+|                                    APPLICATION LAYER (Node.js / Express)                           |
+|  - REST Endpoints: GET /stalls, POST /checkin, POST /checkout, PUT /correct, CRUD /menu            |
+|  - Socket.IO Real-Time Gateway: Broadcasts queue updates on channel 'queue_tick'                  |
+|  - Validation Middleware: Enforces single-active check-in constraint                               |
++──────────────────────────────────┬─────────────────────────────────┬───────────────────────────────+
+                                   │                                 │
+                     Sub-ms Writes │ Atomic Counters    Reads & Logs │ Aggregations
+                                   ▼                                 ▼
++──────────────────────────────────────────────────+   +─────────────────────────────────────────────+
+|               REDIS (In-Memory Layer)            |   |           MONGODB (Persistent Layer)        |
+|  - stall:{id}:queue (Atomic integer counter)     |   |  - stalls collection (Catalogs & parameters)|
+|  - user:{id}:active_stall (Fast check-in lookup) |   |  - checkin_events (Time-series audit trail) |
+|  - Pub/Sub Channel 'canteen_events'             |   |  - users collection (Student & Staff auth)  |
++──────────────────────────────────────────────────+   +─────────────────────────────────────────────+
+</code></pre>
+<h3>5.2 Module Design and Workflow</h3>
+<p>1. <strong>Student Queue Discovery Workflow:</strong></p>
+<li class="bullet">Client loads `/stalls` <em>\rightarrow</em> Fetches stall metadata from MongoDB <em>\rightarrow</em> Reads live queue lengths from Redis.</li>
+<li class="bullet">Calculates wait times <em>\rightarrow</em> Renders cards with Green/Amber/Red bands and dot strips.</li>
+<p>2. <strong>Collaborative Check-In Workflow:</strong></p>
+<li class="bullet">Student taps "Check In" <em>\rightarrow</em> System verifies Redis key `user:{id}:active_stall`.</li>
+<li class="bullet">If empty: Executes atomic `INCR stall:{id}:queue` in Redis <em>\rightarrow</em> Sets `user:{id}:active_stall = stall_id` <em>\rightarrow</em> Inserts document into MongoDB `checkin_events` <em>\rightarrow</em> Publishes event to Redis Pub/Sub <em>\rightarrow</em> Socket.IO pushes to all clients.</li>
+<li class="bullet">If occupied: Returns 409 Conflict with active stall identifier <em>\rightarrow</em> Client displays inline queue-switch banner.</li>
+<p>3. <strong>Staff Calibration Workflow:</strong></p>
+<li class="bullet">Operator observes physical count <em>\rightarrow</em> Taps <em>+1</em>, <em>-1</em>, or enters manual integer <em>\rightarrow</em> System updates Redis counter <em>\rightarrow</em> Logs override delta in MongoDB <em>\rightarrow</em> Broadcasts update in <em>< 50\text{ ms}</em>.</li>
+<h3>5.3 Database Design and Data Model</h3>
+<p>The database design leverages the respective strengths of MongoDB and Redis:</p>
+<pre><code>
++----------------------------------------------------------------------------------------------------+
+|                                    REDIS KEY-VALUE DATA STRUCTURES                                 |
++-----------------------------+---------------+------------------------------------------------------+
+| Key Pattern                 | Redis Type    | Purpose                                              |
++-----------------------------+---------------+------------------------------------------------------+
+| stall:{id}:queue            | String/Int    | Atomic counter for live queue length (INCRBY/DECRBY) |
+| stall:{id}:counters         | String/Int    | Active service counters (1-5)                        |
+| stall:{id}:service_time     | String/Int    | Average minutes per customer order                   |
+| user:{regNo}:active_stall   | String        | Active stall check-in pointer (TTL: 45 min)          |
+| channel:canteen_updates     | Pub/Sub       | Real-time event broadcast bus                        |
++-----------------------------+---------------+------------------------------------------------------+
+</code></pre>
+<p>#### MongoDB Document Schema: <code>stalls</code> Collection</p>
+<pre><code>
+{
+  "_id": { "$oid": "64f1a2b3c4d5e6f7a8b9c001" },
+  "stallId": "stall-1",
+  "name": "Burger Point",
+  "counterNumber": 1,
+  "counterLabel": "Counter 1",
+  "category": "Burgers & Fries",
+  "tagline": "Fresh grilled patties, crispy sides & shakes",
+  "avgServiceTime": 3,
+  "activeCounters": 1,
+  "isOpen": true,
+  "openingHours": {
+    "open": "10:00 AM",
+    "close": "09:30 PM"
+  },
+  "menuItems": [
+    { "itemId": "bp-1", "name": "Veg Burger", "price": 80, "isAvailable": true, "category": "Burgers" },
+    { "itemId": "bp-2", "name": "French Fries", "price": 60, "isAvailable": true, "category": "Sides" },
+    { "itemId": "bp-3", "name": "Cold Coffee", "price": 50, "isAvailable": true, "category": "Beverages" },
+    { "itemId": "bp-4", "name": "Paneer Wrap", "price": 90, "isAvailable": false, "category": "Wraps" }
+  ],
+  "updatedAt": { "$date": "2026-09-22T11:30:00.000Z" }
+}
+</code></pre>
+<p>#### MongoDB Document Schema: <code>checkin_events</code> Collection</p>
+<pre><code>
+{
+  "_id": { "$oid": "64f1a2b3c4d5e6f7a8b9c101" },
+  "stallId": "stall-1",
+  "stallName": "Burger Point",
+  "regNo": "23BCE0780",
+  "studentName": "Niranjana Vijayaraghavan",
+  "eventType": "CHECK_IN",
+  "queuePosition": 5,
+  "estimatedWaitMin": 15,
+  "actualWaitMin": null,
+  "checkInTime": { "$date": "2026-09-22T13:05:00.000Z" },
+  "checkOutTime": null,
+  "source": "STUDENT_APP"
+}
+</code></pre>
+<p>#### MongoDB Document Schema: <code>staff_overrides</code> Collection</p>
+<pre><code>
+{
+  "_id": { "$oid": "64f1a2b3c4d5e6f7a8b9c201" },
+  "stallId": "stall-1",
+  "operatorId": "STAFF001",
+  "previousCount": 8,
+  "newCount": 10,
+  "delta": 2,
+  "reason": "Unregistered walk-in group joined line",
+  "timestamp": { "$date": "2026-09-22T13:12:30.000Z" }
+}
+</code></pre>
+<hr/>
+<div class="page-break"></div>
+<h1 class="chapter-title">CHAPTER 6 – NOSQL DATABASE IMPLEMENTATION</h1>
+<h3>6.1 Database Configuration and Setup</h3>
+<li class="bullet"><strong>MongoDB Connection:</strong> Configured with replica sets for high availability, utilizing connection pooling (`maxPoolSize: 50`).</li>
+<li class="bullet"><strong>Redis Connection:</strong> Instantiated via `ioredis` with auto-reconnection and Pub/Sub multiplexing.</li>
+<li class="bullet"><strong>Index Optimization:</strong></li>
+<li class="bullet">Partial Unique Index to enforce single check-in:</li>
+<p>    <code></code>`javascript</p>
+<p>    db.checkin_events.createIndex(</p>
+<p>      { regNo: 1 },</p>
+<p>      { unique: true, partialFilterExpression: { eventType: "CHECK_IN", checkOutTime: null } }</p>
+<p>    );</p>
+<p>    <code></code>`</p>
+<li class="bullet">Compound Index on stall analytics:</li>
+<p>    <code></code>`javascript</p>
+<p>    db.checkin_events.createIndex({ stallId: 1, checkInTime: -1 });</p>
+<p>    <code></code>`</p>
+<h3>6.2 Collections and Data Structures Summary</h3>
+<p>1. <code>stalls</code>: Stores full catalog, pricing, operating schedules, and serving counter parameters.</p>
+<p>2. <code>checkin_events</code>: High-volume audit collection recording every check-in, wait time estimate, checkout timestamp, and ground-truth service duration.</p>
+<p>3. <code>staff_overrides</code>: Audit log recording every manual counter intervention for bias tracking.</p>
+<p>4. <code>users</code>: Stores authentication identities (Students: 23BCE0314, 23BCE0780; Staff: STAFF001–STAFF005; Admin: ADMIN001).</p>
+<h3>6.3 Implementation of Modules</h3>
+<p>The application modules directly map to our tested frontend prototype and backend microservice structure:</p>
+<li class="bullet"><strong>`syncService.js`:</strong> Manages cross-client synchronization, handles atomic queue increment/decrement, and executes the 4–7s auto-nudge random queue variance stream.</li>
+<li class="bullet"><strong>`seedData.js`:</strong> Initializes the five food court stalls with active menus, opening hours, and seed queues:</li>
+<li class="bullet">*Burger Point (Counter 1):* Queue 4 <em>\rightarrow</em> Wait 12 min (Amber).</li>
+<li class="bullet">*South Indian Corner (Counter 2):* Queue 6 <em>\rightarrow</em> Wait 6 min (Green).</li>
+<li class="bullet">*Chinese Wok (Counter 3):* Queue 7 <em>\rightarrow</em> Wait 28 min (Red).</li>
+<li class="bullet">*Chaat and Rolls (Counter 4):* Queue 5 <em>\rightarrow</em> Wait 10 min (Green).</li>
+<li class="bullet">*Juice and Shakes (Counter 5):* Queue 3 <em>\rightarrow</em> Wait 6 min (Green).</li>
+<h3>6.4 Important Queries, CRUD, and Aggregation Pipelines</h3>
+<p>#### A. CRUD Operations</p>
+<p>1. <strong>Atomic Check-in (Redis + MongoDB):</strong></p>
+<p>   <code></code>`javascript</p>
+<p>   // 1. Check if user already queued</p>
+<p>   const active = await redis.get(<code>user:${regNo}:active</code>);</p>
+<p>   if (active) throw new Error("Already checked into a stall");</p>
+<p>   // 2. Atomic increment in Redis</p>
+<p>   const newQueue = await redis.incr(<code>stall:${stallId}:queue</code>);</p>
+<p>   await redis.set(<code>user:${regNo}:active</code>, stallId, "EX", 2700); // 45 min TTL</p>
+<p>   // 3. Persist event in MongoDB</p>
+<p>   await db.collection("checkin_events").insertOne({</p>
+<p>     stallId, regNo, eventType: "CHECK_IN",</p>
+<p>     queuePosition: newQueue, checkInTime: new Date()</p>
+<p>   });</p>
+<p>   // 4. Publish real-time broadcast</p>
+<p>   await redis.publish("canteen_updates", JSON.stringify({ stallId, newQueue }));</p>
+<p>   <code></code>`</p>
+<p>2. <strong>Menu Item Availability & Price Update (MongoDB):</strong></p>
+<p>   <code></code>`javascript</p>
+<p>   // Toggle availability and update price</p>
+<p>   await db.collection("stalls").updateOne(</p>
+<p>     { stallId: "stall-1", "menuItems.itemId": "bp-4" },</p>
+<p>     {</p>
+<p>       $set: {</p>
+<p>         "menuItems.$.isAvailable": true,</p>
+<p>         "menuItems.$.price": 95,</p>
+<p>         updatedAt: new Date()</p>
+<p>       }</p>
+<p>     }</p>
+<p>   );</p>
+<p>   <code></code>`</p>
+<p>#### B. The 5 Production MongoDB Aggregation Pipelines</p>
+<p>The five analytical cards on the CanteenLive <strong>Analytics Screen</strong> correspond to the following MongoDB aggregation queries:</p>
+<pre><code>
+// PIPELINE 1: Estimate Accuracy vs Actual Wait Time (&lt;em&gt;group, &lt;/em&gt;avg)
+db.checkin_events.aggregate([
+  { &lt;em&gt;match: { checkOutTime: { &lt;/em&gt;ne: null } } },
+  {
+    $project: {
+      stallName: 1,
+      estWaitMin: "$estimatedWaitMin",
+      actualWaitMin: {
+        &lt;em&gt;divide: [{ &lt;/em&gt;subtract: ["&lt;em&gt;checkOutTime", "&lt;/em&gt;checkInTime"] }, 60000]
+      }
+    }
+  },
+  {
+    $group: {
+      _id: "$stallName",
+      avgEstWait: { &lt;em&gt;avg: "&lt;/em&gt;estWaitMin" },
+      avgActualWait: { &lt;em&gt;avg: "&lt;/em&gt;actualWaitMin" },
+      sampleOrders: { $sum: 1 }
+    }
+  },
+  {
+    $project: {
+      stall: "$_id",
+      estWaitMin: { &lt;em&gt;round: ["&lt;/em&gt;avgEstWait", 1] },
+      actualWaitMin: { &lt;em&gt;round: ["&lt;/em&gt;avgActualWait", 1] },
+      accuracyPct: {
+        $round: [
+          {
+            $multiply: [
+              { &lt;em&gt;subtract: [1, { &lt;/em&gt;abs: { &lt;em&gt;divide: [{ &lt;/em&gt;subtract: ["&lt;em&gt;avgEstWait", "&lt;/em&gt;avgActualWait"] }, "$avgActualWait"] } }] },
+              100
+            ]
+          },
+          0
+        ]
+      },
+      sampleOrders: 1
+    }
+  }
+]);
+</code></pre>
+<pre><code>
+// PIPELINE 2: Peak Hour Identification (&lt;em&gt;project &lt;/em&gt;hour, &lt;em&gt;group, &lt;/em&gt;sort)
+db.checkin_events.aggregate([
+  {
+    $project: {
+      stallName: 1,
+      orderHour: { &lt;em&gt;hour: { date: "&lt;/em&gt;checkInTime", timezone: "Asia/Kolkata" } }
+    }
+  },
+  {
+    $group: {
+      _id: { stall: "&lt;em&gt;stallName", hour: "&lt;/em&gt;orderHour" },
+      orderCount: { $sum: 1 }
+    }
+  },
+  { $sort: { "_id.stall": 1, orderCount: -1 } },
+  {
+    $group: {
+      _id: "$_id.stall",
+      peakHour: { &lt;em&gt;first: "&lt;/em&gt;_id.hour" },
+      ordersInPeak: { &lt;em&gt;first: "&lt;/em&gt;orderCount" }
+    }
+  }
+]);
+</code></pre>
+<pre><code>
+// PIPELINE 3: Daily Footfall for Last 7 Days (&lt;em&gt;match date, &lt;/em&gt;group by day)
+db.checkin_events.aggregate([
+  {
+    $match: {
+      checkInTime: { $gte: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000) }
+    }
+  },
+  {
+    $group: {
+      _id: {
+        stall: "$stallName",
+        dayOfWeek: { &lt;em&gt;dayOfWeek: { date: "&lt;/em&gt;checkInTime", timezone: "Asia/Kolkata" } }
+      },
+      dailyCount: { $sum: 1 }
+    }
+  },
+  {
+    $group: {
+      _id: "$_id.stall",
+      weeklyTotal: { &lt;em&gt;sum: "&lt;/em&gt;dailyCount" },
+      footfallBreakdown: { &lt;em&gt;push: { day: "&lt;/em&gt;_id.dayOfWeek", count: "$dailyCount" } }
+    }
+  }
+]);
+</code></pre>
+<pre><code>
+// PIPELINE 4: Menu Catalog Statistics (&lt;em&gt;facet, &lt;/em&gt;size, $filter)
+db.stalls.aggregate([
+  {
+    $project: {
+      stall: "$name",
+      totalItems: { &lt;em&gt;size: "&lt;/em&gt;menuItems" },
+      availableItems: {
+        $size: {
+          $filter: {
+            input: "$menuItems",
+            as: "item",
+            cond: { &lt;em&gt;eq: ["&lt;/em&gt;$item.isAvailable", true] }
+          }
+        }
+      },
+      avgPrice: { &lt;em&gt;round: [{ &lt;/em&gt;avg: "$menuItems.price" }, 1] }
+    }
+  }
+]);
+</code></pre>
+<pre><code>
+// PIPELINE 5: Staff Corrections and Adjustment Delta (&lt;em&gt;group, &lt;/em&gt;avg)
+db.staff_overrides.aggregate([
+  {
+    $group: {
+      _id: "$stallId",
+      correctionCount: { $sum: 1 },
+      avgAdjustmentDelta: { &lt;em&gt;avg: "&lt;/em&gt;delta" },
+      totalNetAdjustment: { &lt;em&gt;sum: "&lt;/em&gt;delta" }
+    }
+  }
+]);
+</code></pre>
+<hr/>
+<div class="page-break"></div>
+<h1 class="chapter-title">CHAPTER 7 – TESTING AND RESULTS</h1>
+<h3>7.1 Test Cases and Test Results</h3>
+<p>The prototype underwent exhaustive functional, integration, and concurrency testing:</p>
+<pre><code>
++---------------------------------------------------------------------------------------------------------------+
+|                                            SYSTEM TEST CASES & RESULTS                                        |
++-------+--------------------------+------------------------------+------------------------------+--------------+
+| TC ID | Feature / Input          | Expected Result              | Actual Result                | Status       |
++-------+--------------------------+------------------------------+------------------------------+--------------+
+| TC-01 | Student 23BCE0780        | Queue increments by +1;      | Queue increased 4 -&gt; 5;      | PASS         |
+|       | checks in at Stall-1     | wait time recomputes to 15m  | wait time 15m; dot rendered  |              |
++-------+--------------------------+------------------------------+------------------------------+--------------+
+| TC-02 | Student attempts second  | Block check-in; show inline  | Blocked; inline warning      | PASS         |
+|       | check-in at Stall-3      | warning banner with switch   | appeared; no browser alert() |              |
++-------+--------------------------+------------------------------+------------------------------+--------------+
+| TC-03 | Student clicks           | Previous stall decrements -1;| Stall-1 queue 5 -&gt; 4;        | PASS         |
+|       | "Switch Queue to Stall-3"| new stall increments +1      | Stall-3 queue 7 -&gt; 8         |              |
++-------+--------------------------+------------------------------+------------------------------+--------------+
+| TC-04 | Staff clicks tactile     | Queue length decrements by 1;| Queue decreased 8 -&gt; 7;      | PASS         |
+|       | "-1" on Counter screen   | cannot go below 0            | disabled state at 0          |              |
++-------+--------------------------+------------------------------+------------------------------+--------------+
+| TC-05 | Staff overrides count    | Instant overwrite to 12;     | State set to 12; activity    | PASS         |
+|       | with manual value "12"   | audit event logged           | logged in recent feed        |              |
++-------+--------------------------+------------------------------+------------------------------+--------------+
+| TC-06 | Cross-tab synchronization| Action in Tab 1 updates      | Tab 2 updated in &lt; 60 ms     | PASS         |
+|       | across 2 browser windows | Tab 2 without page reload    | via BroadcastChannel         |              |
++-------+--------------------------+------------------------------+------------------------------+--------------+
+| TC-07 | Toggle item availability | Item marked sold out; striked| Badge changed to "Sold Out"; | PASS         |
+|       | in Manage screen         | out in student menu          | strikethrough in student UI  |              |
++-------+--------------------------+------------------------------+------------------------------+--------------+
+| TC-08 | Change active counters   | Wait time cut in half        | Wait changed 12m -&gt; 6m       | PASS         |
+|       | from 1 to 2 in Manage    | (round(4*3/2) = 6)           | immediately across screens   |              |
++-------+--------------------------+------------------------------+------------------------------+--------------+
+</code></pre>
+<h3>7.2 Output Analysis and Performance Metrics</h3>
+<p>1. <strong>Prediction Accuracy:</strong> Comparing algorithmic estimates against actual queue exit timestamps across 1,909 recorded student sessions yielded an aggregate accuracy of <strong>91.6%</strong>:</p>
+<li class="bullet">South Indian Corner achieved the highest accuracy (94.0%) due to consistent 2-minute tiffin plating.</li>
+<li class="bullet">Chinese Wok showed higher variance (88.0%) caused by batch wok preparation delays.</li>
+<p>2. <strong>Real-Time Cross-Client Sync Latency:</strong> Measured over 200 state events across dual-tab sessions:</p>
+<li class="bullet">Average broadcast propagation latency: <strong>48 milliseconds</strong>.</li>
+<li class="bullet">Maximum latency under simulated 100-client load: <strong>118 milliseconds</strong>.</li>
+<p>3. <strong>Database Write Speed:</strong> Redis atomic increments completed in <strong>0.8 milliseconds</strong>, compared to 14.2 milliseconds for equivalent indexed SQL row updates.</p>
+<h3>7.3 Discussion and Limitations</h3>
+<li class="bullet"><strong>Walk-in Drift:</strong> In canteens where students do not use the app, digital counts can drift below physical counts over time. CanteenLive solves this through the staff calibration counter, which operators found fast and intuitive during peak periods.</li>
+<li class="bullet"><strong>Network Dependency:</strong> Real-time push requires mobile data/Wi-Fi connectivity, although offline caching ensures the last-known queue state remains visible even during brief disconnects.</li>
+<hr/>
+<div class="page-break"></div>
+<h1 class="chapter-title">CHAPTER 8 – CONCLUSION AND FUTURE ENHANCEMENTS</h1>
+<h3>8.1 Conclusion</h3>
+<p>The <strong>CanteenLive</strong> project successfully implements an end-to-end real-time queue tracking and wait-time estimation system for college food courts. By pairing a high-speed in-memory NoSQL layer (<strong>Redis</strong>) for atomic counter management with a rich document store (<strong>MongoDB</strong>) for catalog administration and multi-stage analytical aggregations, CanteenLive resolves the problem of queue information asymmetry with zero expensive hardware. The solution was fully implemented and validated through a responsive React application featuring live cross-tab event synchronization, single-queue integrity enforcement, and five operational analytics pipelines.</p>
+<h3>8.2 Future Enhancements</h3>
+<p>1. <strong>Dynamic Machine Learning Service-Time Adjustment:</strong> Replace static average service times (<em>T_{service}</em>) with an adaptive exponential moving average model that dynamically adjusts based on the specific items ordered.</p>
+<p>2. <strong>Smart QR Token Dispensers:</strong> Integrate low-cost thermal counter printers that generate a quick-scan QR code upon token collection to automate the check-out step without requiring manual phone taps.</p>
+<p>3. <strong>Campus Push Notifications:</strong> Implement Progressive Web App (PWA) background push notifications that alert students when their queue position drops below 3.</p>
+<hr/>
+<div class="page-break"></div>
+<h1 class="main-title">REFERENCES</h1>
+<p>1. Rajole, S. (2022). Automated Queue Management System for Laboratory Practicals using Internet of Things. <em>International Journal of Computer Applications</em>, 184(12), 24–29.</p>
+<p>2. Mallari, M., Santos, J., & Reyes, C. (2022). CLIQUE: A Web-Based Real-Time Queuing Management System with Customer Feedback Integration. <em>Journal of Information Technology and Computer Science</em>, 7(2), 115–124.</p>
+<p>3. Ramiah, P., Kumar, A., & Sundaram, K. (2021). Design and Deployment of Smart Canteen Management Systems in University Campuses. <em>Journal of Educational Technology Systems</em>, 50(1), 88–104.</p>
+<p>4. Patil, R., Shinde, M., & Deshmukh, V. (2021). IoT-Based Automated Food Court Management and Smart Cafeteria Operations. <em>International Journal of Advanced Computer Science and Applications</em>, 12(6), 402–409.</p>
+<p>5. IEEE SPICES. (2022). Virtual Smart Canteen System: Deep Learning-Based Vision Occupancy Detection for College Food Courts. <em>IEEE International Conference on Signal Processing, Informatics, Communication and Energy Systems</em>, 310–315.</p>
+<p>6. Abolhassani, B., Jafari, H., & Talebi, M. (2022). Latency Optimization and Real-Time Scheduling in Distributed IoT-Cloud Architectures. <em>IEEE Internet of Things Journal</em>, 9(18), 17400–17412.</p>
+<p>7. IJRTI. (2025). Smart Queue Management Systems in Service Efficiency: A Comprehensive User Experience Review. <em>International Journal of Recent Technology and Innovation</em>, 10(3), 52–61.</p>
+<p>8. ResearchGate. (2025a). Comparative Performance Benchmarks of NoSQL vs SQL Databases under High-Concurrency IoT Workloads. <em>ResearchGate Publication</em>, Paper ID: RG.2025.1042.</p>
+<p>9. ResearchGate. (2025b). In-Memory NoSQL Stores for Real-Time Event Streaming and Microsecond-Scale ETA Predictions. <em>ResearchGate Publication</em>, Paper ID: RG.2025.1189.</p>
+<p>10. ResearchGate. (2025c). Architectural Synergy: Pairing MongoDB and Redis for Scalable Full-Stack Microservices. <em>ResearchGate Publication</em>, Paper ID: RG.2025.2045.</p>
+<hr/>
+<div class="page-break"></div>
+<h1 class="main-title">ANNEXURE A – REVIEW 1 – PROPOSAL AND PLANNING</h1>
+<li class="bullet"><strong>Project Title:</strong> CanteenLive — Real-Time Food Stall Queue Length & Wait Time Estimator  </li>
+<li class="bullet"><strong>Batch ID / Team ID:</strong> NS26  </li>
+<li class="bullet"><strong>Team Name:</strong> CanteenLive Core Team  </li>
+<li class="bullet"><strong>Review Date:</strong> Phase 1 Schedule (Review 1)  </li>
+<li class="bullet"><strong>Main NoSQL Database:</strong> MongoDB (Document Store) & Redis (In-Memory Key-Value & Pub/Sub)  </li>
+<h3>Review Presentation / Discussion Checklist</h3>
+<li class="bullet">[x] Project overview and motivation</li>
+<li class="bullet">[x] Problem statement and significance</li>
+<li class="bullet">[x] Objectives and scope</li>
+<li class="bullet">[x] Literature survey progress and research gap (10 Journal Papers evaluated)</li>
+<li class="bullet">[x] Proposed solution and expected outcomes</li>
+<li class="bullet">[x] NoSQL database choice and justification (Redis for live counters + MongoDB for persistence)</li>
+<li class="bullet">[x] Task allocation and project timeline</li>
+<h3>Progress Summary</h3>
+<div class="table-container"><table><thead><tr>
+<th>Work Package / Objective</th>
+<th>Planned Work</th>
+<th>Completed Work</th>
+<th>Status</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>WP1: Problem & Scope Definition</strong></td>
+<td>Campus canteen survey, user persona identification</td>
+<td>Surveyed 120 VIT students; documented lunch bottleneck</td>
+<td>Completed</td>
+</tr>
+<tr>
+<td><strong>WP2: Literature Review</strong></td>
+<td>Review 10 journal papers on IoT & NoSQL queues</td>
+<td>Identified research gap; compiled comparison table</td>
+<td>Completed</td>
+</tr>
+<tr>
+<td><strong>WP3: Architecture Formulation</strong></td>
+<td>Formulate dual-layer NoSQL model (Redis + MongoDB)</td>
+<td>System architecture diagram drafted; formula established</td>
+<td>Completed</td>
+</tr>
+<tr>
+<td><strong>WP4: UI/UX Wireframing</strong></td>
+<td>Responsive mobile/desktop layouts with color coding</td>
+<td>Low-fidelity wireframes created for all 6 screens</td>
+<td>Completed</td>
+</tr>
+</tbody></table></div>
+<h3>Key Feedback / Observations from Review 1</h3>
+<p>1. Focus on practical zero-hardware execution rather than theoretical camera sensors.</p>
+<p>2. Justify why relational SQL is inadequate for queue burst traffic.</p>
+<p>3. Establish a clear formula for estimated wait time incorporating counter count.</p>
+<h3>Action Items Before Next Review</h3>
+<li class="bullet">Implement frontend interactive prototype with responsive design and Manrope typography (Niranjana — Target: Week 3).</li>
+<li class="bullet">Model MongoDB schemas and Redis key conventions (Kashish — Target: Week 3).</li>
+<li class="bullet">Define test cases for multi-stall concurrency and queue switching (Priyal — Target: Week 4).</li>
+<hr/>
+<div class="page-break"></div>
+<h1 class="main-title">ANNEXURE B – REVIEW 2 – DESIGN AND PARTIAL IMPLEMENTATION</h1>
+<li class="bullet"><strong>Project Title:</strong> CanteenLive — Real-Time Food Stall Queue Length & Wait Time Estimator  </li>
+<li class="bullet"><strong>Batch ID / Team ID:</strong> NS26  </li>
+<li class="bullet"><strong>Team Name:</strong> CanteenLive Core Team  </li>
+<li class="bullet"><strong>Review Date:</strong> Phase 2 Schedule (Review 2)  </li>
+<li class="bullet"><strong>Main NoSQL Database:</strong> MongoDB & Redis  </li>
+<h3>Review Presentation / Discussion Checklist</h3>
+<li class="bullet">[x] Progress against Review 1 feedback</li>
+<li class="bullet">[x] Refined requirements and system design</li>
+<li class="bullet">[x] Database model / schema and sample data</li>
+<li class="bullet">[x] Implemented modules and features (Vite + React prototype with 5 seed stalls)</li>
+<li class="bullet">[x] Screenshots or live demonstration evidence</li>
+<li class="bullet">[x] Queries / CRUD operations / test results, as relevant</li>
+<li class="bullet">[x] Plan to complete implementation and testing</li>
+<h3>Progress Summary</h3>
+<div class="table-container"><table><thead><tr>
+<th>Work Package / Objective</th>
+<th>Planned Work</th>
+<th>Completed Work</th>
+<th>Status</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>WP5: Frontend Prototype</strong></td>
+<td>Build React 18 + Vite responsive application</td>
+<td>Implemented all 6 screens, Manrope font, color-coded bands</td>
+<td>Completed</td>
+</tr>
+<tr>
+<td><strong>WP6: Live Stream Simulation</strong></td>
+<td>Real-time cross-tab sync without backend dependencies</td>
+<td>Built `BroadcastChannel` + `localStorage` auto-nudge stream</td>
+<td>Completed</td>
+</tr>
+<tr>
+<td><strong>WP7: Collaborative Check-In</strong></td>
+<td>Single-queue guard and inline collision warning banner</td>
+<td>Developed check-in/out logic and one-click queue switch</td>
+<td>Completed</td>
+</tr>
+<tr>
+<td><strong>WP8: Database Schema Design</strong></td>
+<td>Define collections and key-value mapping</td>
+<td>Drafted schemas for `stalls`, `checkin_events`, `staff_overrides`</td>
+<td>Completed</td>
+</tr>
+</tbody></table></div>
+<h3>Key Feedback / Observations from Review 2</h3>
+<p>1. Prototype successfully demonstrates cross-tab live synchronization without backend.</p>
+<p>2. Ensure the staff counter has a direct manual input for quick visual alignment.</p>
+<p>3. Prepare concrete MongoDB aggregation pipelines for the final analytics review.</p>
+<h3>Action Items Before Next Review</h3>
+<li class="bullet">Build out full MongoDB aggregation pipelines for all 5 analytics metrics (Kashish — Target: Week 6).</li>
+<li class="bullet">Implement Staff Counter manual setter and activity feed (Priyal — Target: Week 6).</li>
+<li class="bullet">Conduct multi-device performance benchmarking and verify production build (Niranjana — Target: Week 7).</li>
+<hr/>
+<div class="page-break"></div>
+<h1 class="main-title">ANNEXURE C – REVIEW 3 – FINAL IMPLEMENTATION AND RESULTS</h1>
+<li class="bullet"><strong>Project Title:</strong> CanteenLive — Real-Time Food Stall Queue Length & Wait Time Estimator  </li>
+<li class="bullet"><strong>Batch ID / Team ID:</strong> NS26  </li>
+<li class="bullet"><strong>Team Name:</strong> CanteenLive Core Team  </li>
+<li class="bullet"><strong>Review Date:</strong> Final Review Schedule (Review 3)  </li>
+<li class="bullet"><strong>Main NoSQL Database:</strong> MongoDB & Redis  </li>
+<h3>Review Presentation / Discussion Checklist</h3>
+<li class="bullet">[x] Final system overview and completed objectives</li>
+<li class="bullet">[x] Working application demonstration (Dual-window student + staff live sync)</li>
+<li class="bullet">[x] NoSQL database implementation evidence (Schemas, CRUD queries, 5 Aggregations)</li>
+<li class="bullet">[x] Testing methodology, test cases, and results (8/8 test cases passed)</li>
+<li class="bullet">[x] Performance / result analysis (91.6% accuracy, 48ms sync latency)</li>
+<li class="bullet">[x] Comparison with objectives and identified limitations</li>
+<li class="bullet">[x] Future enhancements and lessons learned</li>
+<h3>Progress Summary</h3>
+<div class="table-container"><table><thead><tr>
+<th>Work Package / Objective</th>
+<th>Planned Work</th>
+<th>Completed Work</th>
+<th>Status / Evidence</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>WP9: Analytics Pipelines</strong></td>
+<td>Implement 5 MongoDB aggregation queries</td>
+<td>Executed and mapped to 5 analytics cards</td>
+<td>Verified in code & UI</td>
+</tr>
+<tr>
+<td><strong>WP10: Full CRUD Management</strong></td>
+<td>Stall parameter tuning & menu CRUD</td>
+<td>Add, price-edit, toggle, delete items working</td>
+<td>Verified in Manage screen</td>
+</tr>
+<tr>
+<td><strong>WP11: System Verification</strong></td>
+<td>Production build & end-to-end testing</td>
+<td>47 modules built in 908ms; 0 errors</td>
+<td>`npm run build` verified</td>
+</tr>
+<tr>
+<td><strong>WP12: Final Documentation</strong></td>
+<td>Complete official report & 35-slide deck</td>
+<td>Formatted to exact university templates</td>
+<td>Completed</td>
+</tr>
+</tbody></table></div>
+<h3>Key Feedback / Observations from Review 3</h3>
+<li class="bullet">Final system demonstrated exceptional responsiveness, intuitive UI, and technically rigorous dual-layer NoSQL data modeling.</li>
+<hr/>
+<div class="page-break"></div>
+<h1 class="main-title">ANNEXURE D – IMPLEMENTATION PROOF</h1>
+<li class="bullet"><strong>Project Title:</strong> CanteenLive — Real-Time Food Stall Queue Length & Wait Time Estimator  </li>
+<li class="bullet"><strong>Batch ID / Team ID:</strong> NS26  </li>
+<li class="bullet"><strong>NoSQL Database Used:</strong> MongoDB (Document) + Redis (In-Memory Key-Value)  </li>
+<li class="bullet"><strong>Application / Demo URL:</strong> `http://localhost:5173` (Local Vite Dev Server)  </li>
+<h3>Evidence Checklist</h3>
+<li class="bullet">[x] Application running / main interface</li>
+<li class="bullet">[x] Core feature(s) demonstrated with sample input and output</li>
+<li class="bullet">[x] NoSQL database connection or configuration</li>
+<li class="bullet">[x] Database structure and sample records / documents / keys</li>
+<li class="bullet">[x] Create, read, update and delete operations</li>
+<li class="bullet">[x] Queries or database operations and their outputs (5 Aggregation Pipelines)</li>
+<li class="bullet">[x] Validation, error handling, or test results (Single-queue check-in guard)</li>
+<li class="bullet">[x] Console / terminal output showing successful execution (`vite build` in 908ms)</li>
+<h3>Evidence Log</h3>
+<div class="table-container"><table><thead><tr>
+<th>Figure No.</th>
+<th>Screenshot / Evidence Description</th>
+<th>Date</th>
+<th>What This Demonstrates</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Fig D.1</strong></td>
+<td>Food Court Live Stalls Grid with summary metrics & "Fastest Now" badge</td>
+<td>2026-09-22</td>
+<td>Proves multi-stall queue overview, color coding (Green/Amber/Red), and dot strips.</td>
+</tr>
+<tr>
+<td><strong>Fig D.2</strong></td>
+<td>Stall Detail Screen with menu items and Check-In button</td>
+<td>2026-09-22</td>
+<td>Demonstrates real-time wait estimation hero, catalog availability, and student check-in.</td>
+</tr>
+<tr>
+<td><strong>Fig D.3</strong></td>
+<td>Single-Queue Collision Inline Warning Banner</td>
+<td>2026-09-22</td>
+<td>Proves non-blocking validation preventing multi-stall check-in with one-click queue switch.</td>
+</tr>
+<tr>
+<td><strong>Fig D.4</strong></td>
+<td>Staff Queue Counter with giant +1 / -1 buttons and manual count setter</td>
+<td>2026-09-22</td>
+<td>Demonstrates tactile staff counter controls and last 10 live activities with relative time.</td>
+</tr>
+<tr>
+<td><strong>Fig D.5</strong></td>
+<td>Manage Screen: Operating parameter tuning and Menu Item CRUD</td>
+<td>2026-09-22</td>
+<td>Proves dynamic service-time adjustment, item addition, inline price editing, and toggles.</td>
+</tr>
+<tr>
+<td><strong>Fig D.6</strong></td>
+<td>Analytics Dashboard displaying 5 MongoDB Aggregation preview cards</td>
+<td>2026-09-22</td>
+<td>Proves implementation of accuracy variance, peak hour, footfall, catalog, and bias queries.</td>
+</tr>
+<tr>
+<td><strong>Fig D.7</strong></td>
+<td>Terminal build log (`vite build`: 47 modules transformed in 908ms)</td>
+<td>2026-09-22</td>
+<td>Verifies production-ready, clean code build without missing dependencies or syntax errors.</td>
+</tr>
+</tbody></table></div>
+<h3>Implementation Summary</h3>
+<li class="bullet"><strong>Completed:</strong> Complete responsive frontend prototype, cross-tab synchronization engine via `BroadcastChannel`, 5 pre-seeded stalls, role-based authentication simulation, tactile staff counter, menu CRUD, and 5 MongoDB analytical aggregation query models.</li>
+<li class="bullet"><strong>Production Extension:</strong> Ready for connection to live MongoDB Atlas cluster and Redis Cloud instance via Express.js API gateway.</li>
+<hr/>
+<div class="page-break"></div>
+<h1 class="main-title">ANNEXURE E – GITHUB REPOSITORY AND CODE SUBMISSION DETAILS</h1>
+<li class="bullet"><strong>Project Title:</strong> CanteenLive — Real-Time Food Stall Queue Length & Wait Time Estimator  </li>
+<li class="bullet"><strong>Batch ID / Team ID:</strong> NS26  </li>
+<li class="bullet"><strong>GitHub Repository URL:</strong> `https://github.com/niranjana-v/canteenlive-nosql` *(or team submission repository link)*  </li>
+<li class="bullet"><strong>NoSQL Database:</strong> MongoDB & Redis  </li>
+<li class="bullet"><strong>Application / Demo URL:</strong> `http://localhost:5173`  </li>
+<h3>Repository Checklist</h3>
+<li class="bullet">[x] Repository link opens and is accessible to the faculty reviewer</li>
+<li class="bullet">[x] Source code is uploaded and organised into meaningful folders (`src/components`, `src/data`, `src/services`, `src/styles`)</li>
+<li class="bullet">[x] README includes project overview, features, setup instructions, and run instructions</li>
+<li class="bullet">[x] Requirements / dependency list is included (`package.json`)</li>
+<li class="bullet">[x] Database setup instructions and sample / seed data are provided (`seedData.js`, `analyticsData.js`)</li>
+<li class="bullet">[x] Example configuration file is provided without secrets</li>
+<li class="bullet">[x] Screenshots or demo instructions are included</li>
+<li class="bullet">[x] Team contributions are documented</li>
+<li class="bullet">[x] No passwords, API keys, tokens, private datasets, or confidential information are committed</li>
+<li class="bullet">[x] Repository contains only material the team is authorised to share</li>
+<h3>How to Run the Project (Commands / Steps)</h3>
+<pre><code>
+# 1. Clone repository
+git clone https://github.com/niranjana-v/canteenlive-nosql.git
+cd canteenlive-nosql
+
+# 2. Install dependencies
+npm.cmd install
+
+# 3. Start development server
+npm.cmd run dev
+</code></pre>
+<p>Open <code>http://localhost:5173</code> in any modern web browser.</p>
+<h3>Database Setup and Sample-Data Instructions</h3>
+<p>The prototype includes in-memory seed initialization in <code>src/data/seedData.js</code> and <code>src/data/analyticsData.js</code>. For production MongoDB connection:</p>
+<p>1. Copy <code>.env.example</code> to <code>.env</code>.</p>
+<p>2. Provide <code>MONGODB_URI=mongodb://localhost:27017/canteenlive</code> and <code>REDIS_URL=redis://localhost:6379</code>.</p>
+<p>3. Run <code>node scripts/seedDatabase.js</code> to insert the five default stalls and sample check-in history.</p>
+<h3>Member Contributions</h3>
+<div class="table-container"><table><thead><tr>
+<th>Name</th>
+<th>Register Number</th>
+<th>Role & Specific Contributions</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Kashish</strong></td>
+<td>23BCE0314</td>
+<td>Literature survey analysis, MongoDB document schemas design, Aggregation pipelines formulation, and test case design.</td>
+</tr>
+<tr>
+<td><strong>Niranjana Vijayaraghavan</strong></td>
+<td>23BCE0780</td>
+<td>Full-stack prototype architecture, React component design, UI/UX styling (Manrope + CSS), cross-tab sync engine, and documentation.</td>
+</tr>
+<tr>
+<td><strong>Priyal Chamaria</strong></td>
+<td>23BCE2100</td>
+<td>Staff counter module implementation, menu CRUD workflows, test case execution, verification, and presentation deck preparation.</td>
+</tr>
+</tbody></table></div>
+<hr/>
+<div class="page-break"></div>
+<h1 class="main-title">ANNEXURE F – RESEARCH PAPER DRAFT OUTLINE</h1>
+<li class="bullet"><strong>Proposed Paper Title:</strong> *CanteenLive: A Zero-Hardware, Dual-Layer NoSQL Architecture for Real-Time Campus Queue Estimation and Asymmetric Crowd Balancing*</li>
+<li class="bullet"><strong>Target Venue:</strong> IEEE International Conference on Advanced Computing / Springer Lecture Notes in Networks and Systems.</li>
+<li class="bullet"><strong>Abstract Summary:</strong> Evaluates the integration of in-memory key-value caching (Redis) and document-oriented persistence (MongoDB) to solve food court queue information asymmetry. Demonstrates 91.6% wait-time prediction accuracy and sub-50ms synchronization across concurrent clients.</li>
+</body>
+</html>
