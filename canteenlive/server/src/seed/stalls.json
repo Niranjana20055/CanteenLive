@@ -1,0 +1,80 @@
+[
+  {
+    "_id": "stall_001",
+    "name": "Burger Point",
+    "location": "VIT Main Food Court - Counter 1",
+    "avg_service_time": 3,
+    "active_counters": 1,
+    "weekday_hours": ["08:00", "20:00"],
+    "weekend_hours": ["09:00", "18:00"],
+    "popularity": 1.1,
+    "menu": [
+      { "item_id": "item_001", "name": "Veg Burger", "price": 80, "available": true },
+      { "item_id": "item_002", "name": "French Fries", "price": 60, "available": true },
+      { "item_id": "item_003", "name": "Cold Coffee", "price": 50, "available": true },
+      { "item_id": "item_004", "name": "Paneer Wrap", "price": 90, "available": false }
+    ]
+  },
+  {
+    "_id": "stall_002",
+    "name": "South Indian Corner",
+    "location": "VIT Main Food Court - Counter 2",
+    "avg_service_time": 2,
+    "active_counters": 2,
+    "weekday_hours": ["07:30", "20:30"],
+    "weekend_hours": ["08:00", "19:00"],
+    "popularity": 1.2,
+    "menu": [
+      { "item_id": "item_005", "name": "Masala Dosa", "price": 70, "available": true },
+      { "item_id": "item_006", "name": "Idli (3 pcs)", "price": 40, "available": true },
+      { "item_id": "item_007", "name": "Medu Vada", "price": 30, "available": true },
+      { "item_id": "item_008", "name": "Filter Coffee", "price": 20, "available": true }
+    ]
+  },
+  {
+    "_id": "stall_003",
+    "name": "Chinese Wok",
+    "location": "VIT Main Food Court - Counter 3",
+    "avg_service_time": 4,
+    "active_counters": 1,
+    "weekday_hours": ["11:00", "21:00"],
+    "weekend_hours": ["11:00", "20:00"],
+    "popularity": 0.9,
+    "menu": [
+      { "item_id": "item_009", "name": "Veg Fried Rice", "price": 90, "available": true },
+      { "item_id": "item_010", "name": "Veg Noodles", "price": 90, "available": true },
+      { "item_id": "item_011", "name": "Gobi Manchurian", "price": 80, "available": true },
+      { "item_id": "item_012", "name": "Spring Roll", "price": 60, "available": false }
+    ]
+  },
+  {
+    "_id": "stall_004",
+    "name": "Chaat and Rolls",
+    "location": "VIT Main Food Court - Counter 4",
+    "avg_service_time": 2,
+    "active_counters": 1,
+    "weekday_hours": ["10:00", "20:00"],
+    "weekend_hours": ["10:00", "19:00"],
+    "popularity": 0.8,
+    "menu": [
+      { "item_id": "item_013", "name": "Pani Puri", "price": 40, "available": true },
+      { "item_id": "item_014", "name": "Samosa Chaat", "price": 50, "available": true },
+      { "item_id": "item_015", "name": "Kathi Roll", "price": 80, "available": true }
+    ]
+  },
+  {
+    "_id": "stall_005",
+    "name": "Juice and Shakes",
+    "location": "VIT Main Food Court - Counter 5",
+    "avg_service_time": 2,
+    "active_counters": 1,
+    "weekday_hours": ["09:00", "20:00"],
+    "weekend_hours": ["09:00", "19:00"],
+    "popularity": 0.7,
+    "menu": [
+      { "item_id": "item_016", "name": "Mango Shake", "price": 60, "available": true },
+      { "item_id": "item_017", "name": "Watermelon Juice", "price": 40, "available": true },
+      { "item_id": "item_018", "name": "Oreo Shake", "price": 80, "available": true }
+    ]
+  }
+]

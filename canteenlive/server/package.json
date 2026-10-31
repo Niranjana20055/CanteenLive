@@ -1,0 +1,26 @@
+{
+  "name": "canteenlive-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "seed": "node src/scripts/seed.js",
+    "indexes": "node src/scripts/createIndexes.js",
+    "explain": "node src/scripts/explainDemo.js",
+    "aggs": "node src/scripts/runAggregations.js",
+    "reset-redis": "node src/scripts/resetRedis.js",
+    "test-redis": "node src/scripts/testRedis.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.1",
+    "express": "^4.22.3",
+    "ioredis": "^6.0.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.6.0",
+    "socket.io": "^4.8.3"
+  }
+}
